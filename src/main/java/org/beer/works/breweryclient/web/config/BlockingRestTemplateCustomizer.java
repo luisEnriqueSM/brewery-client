@@ -23,6 +23,7 @@ public class BlockingRestTemplateCustomizer implements RestTemplateCustomizer {
         RequestConfig requestConfig = RequestConfig
                 .custom()
                 .setConnectionRequestTimeout(Timeout.ofMilliseconds(3000))
+                .setResponseTimeout(Timeout.ofMilliseconds(3000))
                 .build();
 
         CloseableHttpClient httpClient = HttpClients
