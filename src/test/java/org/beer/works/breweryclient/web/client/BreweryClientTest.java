@@ -25,7 +25,9 @@ class BreweryClientTest {
     @Test
     void testSaveNewBeer(){
         // given
-        BeerDto beerDto = BeerDto.builder().beerName("Name").build();
+        BeerDto beerDto = BeerDto.builder()
+                .beerName("Name")
+                .beerStyle("LAGER").build();
 
         URI uri = client.saveNewBeer(beerDto);
 
@@ -37,7 +39,10 @@ class BreweryClientTest {
     @Test
     void testUpdateBeer(){
         // given
-        BeerDto beerDto = BeerDto.builder().beerName("New beer").build();
+        BeerDto beerDto = BeerDto.builder()
+                .beerName("New beer")
+                .beerStyle("LAGER")
+                .build();
 
         client.updateBeer(UUID.randomUUID(), beerDto);
     }
